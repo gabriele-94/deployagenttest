@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Workflow
+metadata:
+  name: hello-world
+  description: Minimal CI workflow for API testing
+
+spec:
+  triggers:
+    - type: manual
+
+  jobs:
+    - name: hello-job
+      runsOn: linux
+
+      steps:
+        - name: Say hello
+          run: |
+            echo "Hello, World!"
+            echo "Workflow executed successfully"
